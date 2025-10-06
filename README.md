@@ -54,7 +54,7 @@ Follow these steps to run the project locally.
 
     1. Clone the repository:
        Bash
-       git clone [your-repository-link]
+       git clone https://github.com/StealthPanther/RaaS-Defense-Platform.git
 
     2. Navigate to the project's root directory.
 
