@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ransomware Recovery Tool</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ransomware Recovery & Intelligence Tool</h1>
+      <p class="subtitle">
+        Enter details about the attack to identify the ransomware and get a
+        recovery plan.
+      </p>
+
+      <div class="recovery-form">
+        <h3>Step 1: Provide Clues</h3>
+
+        <label for="encrypted-filename"
+          >Example of an Encrypted Filename:</label
+        >
+        <input
+          type="text"
+          id="encrypted-filename"
+          placeholder="e.g., photo.jpg.lockbit"
+        />
+
+        <label for="ransom-note"
+          >Paste the text from the Ransom Note here:</label
+        >
+        <textarea
+          id="ransom-note"
+          rows="8"
+          placeholder="Copy and paste the entire text from the ransom note file..."
+        ></textarea>
+
+        <button id="analyze-situation-btn" class="sim-button">
+          Analyze My Situation
+          <div class="loading-spinner hidden"></div>
+        </button>
+      </div>
+
+      <div
+        id="loading-state"
+        class="hidden"
+        style="text-align: center; margin-top: 40px"
+      >
+        <p class="loading-text">Analyzing the cyber threat...</p>
+      </div>
+
+      <div id="recovery-plan-area" class="hidden"></div>
+
+      <a href="index.html" class="sim-button" style="margin-top: 40px"
+        >Back to Main Page</a
+      >
+    </div>
+    <script src="recovery.js"></script>
+  </body>
+</html>

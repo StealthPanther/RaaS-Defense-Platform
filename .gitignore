@@ -1,0 +1,25 @@
+ # Python
+__pycache__/
+*.pyc]
+*build/
+*develop-eggs/
+*dist/
+*eggs/
+*.egg-info/
+*htmlcov/
+*.egg
+*.manifest
+*.spec
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/

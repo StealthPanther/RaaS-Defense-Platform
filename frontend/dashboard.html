@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Threat Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      /* Specific styles for the dashboard */
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
+      #map {
+        height: 600px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+      .feed-container {
+        background-color: #f8fafc;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 20px;
+      }
+      .feed-list {
+        list-style: none;
+        padding: 0;
+        height: 550px;
+        overflow-y: auto;
+      }
+      .feed-item {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="max-width: 1200px">
+      <h1>Live Cyber Threat Dashboard</h1>
+      <p class="subtitle">
+        A real-time visualization of simulated ransomware attacks and live
+        threat intelligence.
+      </p>
+
+      <div class="dashboard-grid">
+        <div id="map"></div>
+
+        <div class="feed-container">
+          <h3>Latest Malicious IPs</h3>
+          <ul id="threat-feed-list" class="feed-list"></ul>
+        </div>
+      </div>
+
+      <a href="index.html" class="sim-button" style="margin-top: 40px"
+        >Back to Analyzer</a
+      >
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

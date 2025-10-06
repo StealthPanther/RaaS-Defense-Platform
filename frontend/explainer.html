@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The RaaS Business Model</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>The Ransomware-as-a-Service Economy</h1>
+      <p class="subtitle">
+        An animated look at how the RaaS business model operates.
+      </p>
+
+      <div class="explainer-grid">
+        <div class="node" id="node-dev">
+          <div class="icon">💻</div>
+          <h3>The Developer</h3>
+          <p>
+            Creates and maintains the ransomware malware and the web portal.
+          </p>
+        </div>
+        <div class="arrow" id="arrow1">→</div>
+
+        <div class="node" id="node-portal">
+          <div class="icon">🌐</div>
+          <h3>The RaaS Portal</h3>
+          <p>
+            A subscription-based platform, often on the dark web, where the
+            malware is sold.
+          </p>
+        </div>
+        <div class="arrow" id="arrow2">→</div>
+
+        <div class="node" id="node-affiliate">
+          <div class="icon">👨‍💻</div>
+          <h3>The Affiliate</h3>
+          <p>
+            Subscribes to the service and is responsible for infecting victims.
+          </p>
+        </div>
+
+        <div class="arrow-down" id="arrow3">↓</div>
+
+        <div class="node" id="node-victim">
+          <div class="icon">👤</div>
+          <h3>The Victim</h3>
+          <p>
+            Gets infected via phishing or other methods. Their files are
+            encrypted.
+          </p>
+        </div>
+
+        <div class="arrow-up" id="arrow4">↑</div>
+
+        <div class="node" id="node-payout">
+          <div class="icon">💸</div>
+          <h3>The Payout</h3>
+          <p>
+            Victim pays ransom. The money is automatically split between the
+            Affiliate (70-80%) and the Developer (20-30%).
+          </p>
+        </div>
+      </div>
+
+      <a href="index.html" class="sim-button" style="margin-top: 40px"
+        >Back to Analyzer</a
+      >
+    </div>
+    <script src="explainer.js"></script>
+  </body>
+</html>

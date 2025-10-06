@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attack Simulation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="email-step" class="simulation-step">
+        <h1>Step 1: The Bait</h1>
+        <p class="subtitle">
+          You've received the following email. What do you do?
+        </p>
+        <div class="email-box">
+          <div class="email-header">
+            <p><b>From:</b> accounts@quickbooks-invoicing.com</p>
+            <p><b>Subject:</b> Urgent: Unpaid Invoice INV-7812</p>
+          </div>
+          <div class="email-body">
+            <p>Dear Valued Client,</p>
+            <p>
+              Please find attached the invoice for your recent purchase. Payment
+              is overdue.
+            </p>
+            <p>Failure to pay may result in service interruption.</p>
+            <p>Thank you,</p>
+            <p>Accounts Department</p>
+          </div>
+          <div class="email-attachment">
+            <button id="open-attachment-btn">
+              📄 Open Invoice_INV-7812.pdf.exe
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="encryption-step" class="simulation-step hidden">
+        <h1>ATTACK IN PROGRESS</h1>
+        <p class="subtitle">
+          The attachment was malicious! Ransomware is now encrypting your
+          files...
+        </p>
+        <div class="progress-bar-container">
+          <div id="encryption-progress" class="progress-bar"></div>
+        </div>
+        <div id="encrypted-files-log" class="files-log"></div>
+      </div>
+
+      <div id="ransom-note-step" class="simulation-step hidden">
+        <div class="ransom-note">
+          <h1>!!! YOUR FILES HAVE BEEN ENCRYPTED !!!</h1>
+          <p>
+            All your documents, photos, databases, and other important files
+            have been encrypted with the strongest encryption.
+          </p>
+          <p>
+            To get your files back, you must pay a ransom of
+            <b>$500 in Bitcoin</b>.
+          </p>
+          <p>
+            If you don't pay within the time limit, your files will be lost
+            forever.
+          </p>
+          <div id="countdown-timer" class="timer">72:00:00</div>
+          <div class="ransom-actions">
+            <button id="pay-btn" class="ransom-btn pay">
+              I will Pay the Ransom
+            </button>
+            <button id="dont-pay-btn" class="ransom-btn dont-pay">
+              I Won't Pay
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="lesson-step" class="simulation-step hidden">
+        <h1>Debrief: What Just Happened?</h1>
+        <div id="lesson-content" class="advice-box"></div>
+        <a href="index.html" class="sim-button">Back to Analyzer</a>
+      </div>
+    </div>
+    <script src="simulation.js"></script>
+  </body>
+</html>

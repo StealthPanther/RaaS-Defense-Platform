@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+    <title>Ransomware Early Warning System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .canary-options {
+        text-align: left;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+      .canary-options label {
+        display: block;
+        background: #f8fafc;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ransomware Early Warning System</h1>
+      <p class="subtitle">
+        Generate a custom script that creates and monitors decoy files to give
+        you an early warning of a ransomware attack.
+      </p>
+
+      <div class="canary-options">
+        <h3>1. Choose Your Decoy Files:</h3>
+        <label
+          ><input type="checkbox" name="decoy" value="My Passwords.txt" /> My
+          Passwords.txt</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="decoy"
+            value="Financial Report Q4.xlsx"
+          />
+          Financial Report Q4.xlsx</label
+        >
+        <label
+          ><input type="checkbox" name="decoy" value="Bitcoin Wallet.dat" />
+          Bitcoin Wallet.dat</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="decoy"
+            value="Family Photos Backup.zip"
+          />
+          Family Photos Backup.zip</label
+        >
+      </div>
+
+      <button
+        id="generate-script-btn"
+        class="sim-button"
+        style="background-color: #22c55e"
+      >
+        Generate & Download Watcher Script
+      </button>
+
+      <div class="advice-box" style="margin-top: 30px; text-align: left">
+        <h3>How to Use It:</h3>
+        <ol>
+          <li>Download the generated `watcher.py` script.</li>
+          <li>
+            Place it in an important folder you want to protect (e.g., your
+            Documents folder).
+          </li>
+          <li>
+            Run the script. It will create the fake decoy files and start
+            monitoring them silently in the background.
+          </li>
+          <li>
+            If ransomware attacks and touches a decoy file, a large warning will
+            immediately pop up on your screen.
+          </li>
+        </ol>
+      </div>
+      <a href="index.html" class="sim-button" style="margin-top: 40px"
+        >Back to Analyzer</a
+      >
+    </div>
+
+    <script>
+      document
+        .getElementById("generate-script-btn")
+        .addEventListener("click", () => {
+          const checkedBoxes = document.querySelectorAll(
+            'input[name="decoy"]:checked'
+          );
+          const selectedFiles = Array.from(checkedBoxes).map((cb) => cb.value);
+
+          if (selectedFiles.length === 0) {
+            alert("Please select at least one decoy file.");
+            return;
+          }
+
+          // Construct the URL to the backend endpoint
+          const url = `http://127.0.0.1:5000/generate-watcher?files=${encodeURIComponent(
+            JSON.stringify(selectedFiles)
+          )}`;
+
+          // Trigger the download
+          window.location.href = url;
+        });
+    </script>
+  </body>
+</html>

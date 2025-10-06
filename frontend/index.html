@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RaaS Awareness Detector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>RaaS Awareness Detector</h1>
+      <p class="subtitle">
+        Enter a filename to analyze it for suspicious patterns.
+      </p>
+
+      <div class="simulation-link-area">
+        <p>
+          Want to see how an attack happens? Try our interactive simulation.
+        </p>
+        <a href="simulation.html" class="sim-button"
+          >Launch Attack Simulation</a
+        >
+        <a
+          href="explainer.html"
+          class="sim-button"
+          style="background-color: #4f46e5"
+          >See the RaaS Business Model</a
+        >
+        <a
+          href="dashboard.html"
+          class="sim-button"
+          style="background-color: #be123c"
+          >Live Threat Dashboard</a
+        >
+        <a
+          href="canary.html"
+          class="sim-button"
+          style="background-color: #16a34a"
+          >Create Warning System</a
+        >
+        <a
+          href="recovery.html"
+          class="sim-button"
+          style="background-color: #f59e0b"
+          >Ransomware Recovery Tool</a
+        >
+      </div>
+
+      <div class="input-area">
+        <input
+          type="text"
+          id="filename-input"
+          placeholder="e.g., invoice_urgent.pdf.exe"
+        />
+        <button id="analyze-btn">Analyze</button>
+      </div>
+
+      <div class="file-upload-area">
+        <h2>Advanced Analysis: File Content Scanner</h2>
+        <p class="subtitle">
+          Upload a file (.txt, .js, .py, etc.) to analyze its content for
+          suspicious characteristics.
+        </p>
+        <label for="file-input" class="file-input-label"> Choose File </label>
+        <input type="file" id="file-input" />
+        <span id="file-name">No file chosen</span>
+      </div>
+
+      <div id="file-results-area" class="hidden">
+        <h3>File Content Report</h3>
+        <div id="file-report-content"></div>
+      </div>
+
+      <div id="results-area" class="hidden">
+        <h2>Analysis Report</h2>
+
+        <div class="meter-container">
+          <div id="threat-level-text">Awaiting Analysis...</div>
+          <div class="meter-bar-background">
+            <div id="meter-bar" class="meter-bar"></div>
+          </div>
+        </div>
+
+        <div id="reasons-list"></div>
+
+        <div class="advice-box">
+          <h3>Our Advice:</h3>
+          <p id="advice-text"></p>
+        </div>
+      </div>
+      <div class="chat-container">
+        <div class="chat-header">
+          <h2>CyBot - Your AI Security Assistant</h2>
+        </div>
+        <div id="chat-box" class="chat-box">
+          <div class="chat-message bot">
+            Hello! Ask me anything about ransomware or cybersecurity.
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+          />
+          <button id="chat-send-btn">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
