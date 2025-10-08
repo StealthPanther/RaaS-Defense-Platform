@@ -26,8 +26,7 @@ except Exception as e:
 
 # --- AI Chatbot Configuration (Gemini) ---
 try:
-    # IMPORTANT: PASTE YOUR API KEY HERE    AIzaSyCcErf-Dejf5VwhHW7b2-1NXLHVaH9nbo0
-    GOOGLE_API_KEY = "AIzaSyCcErf-Dejf5VwhHW7b2-1NXLHVaH9nbo0" 
+    # declare the API KEY IN ENV
     genai.configure(api_key=GOOGLE_API_KEY)
     chat_model = genai.GenerativeModel('gemini-1.5-flash')
     print("✅ AI Chatbot configured successfully!")
