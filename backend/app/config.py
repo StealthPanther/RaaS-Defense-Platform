@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 from typing import Optional
+from pydantic import ConfigDict
 
 
 class Settings(BaseSettings):
@@ -33,9 +34,11 @@ class Settings(BaseSettings):
     # CORS
     BACKEND_CORS_ORIGINS: list[str] = ["http://localhost:3000", "http://localhost:8000"]
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    model_config = ConfigDict(
+        env_file=".env",
+        case_sensitive=True,
+        extra="ignore"  # Ignore extra fields in .env (like FLASK_APP, FLASK_ENV)
+    )
 
 
 @lru_cache()
