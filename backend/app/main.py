@@ -38,9 +38,18 @@ app.add_middleware(
 )
 
 # Import and include routers
-# from app.api.v1.endpoints import analyze, chat, files, threats, recovery
-# app.include_router(analyze.router, prefix=settings.API_V1_PREFIX, tags=["analyze"])
-# app.include_router(chat.router, prefix=settings.API_V1_PREFIX, tags=["chat"])
+from app.api.v1.endpoints import analyze, files, chat, threats, recovery
+from app.services.ml_service import ml_service
+
+# Initialize ML service
+ml_service.load_model()
+
+# Include routers
+app.include_router(analyze.router, prefix=f"{settings.API_V1_PREFIX}/analyze", tags=["analyze"])
+app.include_router(files.router, prefix=f"{settings.API_V1_PREFIX}/files", tags=["files"])
+app.include_router(chat.router, prefix=f"{settings.API_V1_PREFIX}/chat", tags=["chat"])
+app.include_router(threats.router, prefix=f"{settings.API_V1_PREFIX}/threats", tags=["threats"])
+app.include_router(recovery.router, prefix=f"{settings.API_V1_PREFIX}/recovery", tags=["recovery"])
 
 @app.get("/")
 async def root():
